@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: porla/porla
+  IMAGE_NAME: pknw1/porla
 
 jobs:
   build:
@@ -62,7 +62,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           build-args: |
-            CCACHE_REMOTE_STORAGE=${{ secrets.PORLA_CCACHE_REMOTE_STORAGE_WRITE }}
             GITVERSION_SEMVER=${{ steps.gitversion.outputs.fullSemVer }}
           context: .
           load: true
@@ -84,7 +83,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           build-args: |
-            CCACHE_REMOTE_STORAGE=${{ secrets.PORLA_CCACHE_REMOTE_STORAGE_WRITE }}
             GITVERSION_SEMVER=${{ steps.gitversion.outputs.fullSemVer }}
           context: .
           push: true
