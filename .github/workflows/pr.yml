@@ -5,7 +5,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: porla/porla
+  IMAGE_NAME: pknw1/porla
 
 jobs:
   build:
